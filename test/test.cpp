@@ -7,7 +7,7 @@
 
 #include <cstdlib>
 
-int tmpMain() {
+int main() {
     int module_name_0_ret = testModuleName0();
     int module_name_1_ret = testModuleName1();
     int module_name_2_ret = testModuleName2();
