@@ -33,6 +33,9 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ModuleName2\test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_ModuleName0\ModuleName0.h">
@@ -50,5 +53,8 @@
     <ClInclude Include="ModuleName2\include\SubModuleName2.h">
       <Filter>头文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ModuleName2\xmake.lua" />
   </ItemGroup>
 </Project>

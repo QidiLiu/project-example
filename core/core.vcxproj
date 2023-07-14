@@ -137,6 +137,7 @@
     <ClCompile Include="ModuleName2\ModuleName2.cpp" />
     <ClCompile Include="ModuleName2\src\SubModuleName1.cpp" />
     <ClCompile Include="ModuleName2\src\SubModuleName2.cpp" />
+    <ClCompile Include="ModuleName2\test.cc" />
     <ClCompile Include="_ModuleName0\ModuleName0.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +146,9 @@
     <ClInclude Include="ModuleName2\include\SubModuleName2.h" />
     <ClInclude Include="ModuleName2\ModuleName2.h" />
     <ClInclude Include="_ModuleName0\ModuleName0.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ModuleName2\xmake.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
