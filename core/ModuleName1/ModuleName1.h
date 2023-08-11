@@ -1,6 +1,8 @@
 #ifndef PROJECTEXAMPLE_MODULENAME1_H_
 #define PROJECTEXAMPLE_MODULENAME1_H_
 
+#include "spdlog/spdlog.h"
+
 class ModuleName1 {
 
 public:
