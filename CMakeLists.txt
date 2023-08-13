@@ -12,17 +12,9 @@ include_directories(${spdlog_INCLUDE_DIR})
 set(ROOT_DIR ${CMAKE_SOURCE_DIR})
 include_directories(${ROOT_DIR})
 
-add_subdirectory(./core/ModuleName0)
-add_subdirectory(./core/ModuleName1)
-add_subdirectory(./core/ModuleName2)
-
 add_executable(${MAIN})
+    add_subdirectory(./core/ModuleName0)
+    add_subdirectory(./core/ModuleName1)
+    add_subdirectory(./core/ModuleName2)
+
     target_sources(${MAIN} PRIVATE ${ROOT_DIR}/core/main.cc)
-
-    target_link_libraries(
-        ${MAIN}
-        ModuleName0
-        ModuleName1
-        ModuleName2
-    )
-

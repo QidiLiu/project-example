@@ -2,13 +2,13 @@ set(MODULE_NAME ModuleName2)
 
 file(
     GLOB_RECURSE SRC_FILES
-    "${ROOT_DIR}/core/${MODULE_NAME}/*.h"
-    "${ROOT_DIR}/core/${MODULE_NAME}/*.cpp"
+    "${CMAKE_SOURCE_DIR}/*.h"
+    "${CMAKE_SOURCE_DIR}/*.cpp"
 )
 
 add_library(${MODULE_NAME} ${SRC_FILES})
-
-# test ModuleName2 independently
+add_dependencies(${MAIN} ${MODULE_NAME})
+target_link_libraries(${MAIN} ${MODULE_NAME})
 
 set(ModuleName2_TEST_FLAG FALSE)
 
@@ -28,10 +28,6 @@ if(ModuleName2_TEST_FLAG)
 
     add_executable(${TEST})
         target_sources(${TEST} PRIVATE ${ROOT_DIR}/core/${MODULE_NAME}/test.cc)
-
-        target_link_libraries(
-            ${TEST}
-            ${MODULE_NAME}
-        )
-
+        add_dependencies(${TEST} ${MODULE_NAME})
+        target_link_libraries(${TEST} ${MODULE_NAME})
 endif()
