@@ -1,11 +1,17 @@
 set(MODULE_NAME ModuleName1)
 
+if(NOT DEFINED spdlog_FOUND)
+    find_package(spdlog REQUIRED)
+endif()
+
 file(
     GLOB_RECURSE SRC_FILES
-    "${CMAKE_SOURCE_DIR}/*.h"
-    "${CMAKE_SOURCE_DIR}/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
 )
 
 add_library(${MODULE_NAME} ${SRC_FILES})
-add_dependencies(${MAIN} ${MODULE_NAME})
-target_link_libraries(${MAIN} ${MODULE_NAME})
+    target_include_directories(${MODULE_NAME} PUBLIC ${spdlog_INCLUDE_DIR})
+
+    add_dependencies(${MAIN} ${MODULE_NAME})
+    target_link_libraries(${MAIN} ${MODULE_NAME})

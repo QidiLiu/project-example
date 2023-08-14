@@ -7,14 +7,16 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 20)
 
 find_package(spdlog REQUIRED)
-include_directories(${spdlog_INCLUDE_DIR})
 
-set(ROOT_DIR ${CMAKE_SOURCE_DIR})
+set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${ROOT_DIR})
 
 add_executable(${MAIN})
+    target_include_directories(${MAIN} PUBLIC ${spdlog_INCLUDE_DIR})
+
     add_subdirectory(./core/ModuleName0)
     add_subdirectory(./core/ModuleName1)
     add_subdirectory(./core/ModuleName2)
+    add_subdirectory(./core/Pybind11Package)
 
     target_sources(${MAIN} PRIVATE ${ROOT_DIR}/core/main.cc)
