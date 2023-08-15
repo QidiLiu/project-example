@@ -13,7 +13,6 @@ file(
 add_library(${MODULE_NAME} ${SRC_FILES})
     target_include_directories(${MODULE_NAME} PUBLIC ${spdlog_INCLUDE_DIR})
 
-    add_dependencies(${MAIN} ${MODULE_NAME})
     target_link_libraries(${MAIN} ${MODULE_NAME})
 
 set(ModuleName2_TEST_FLAG FALSE)

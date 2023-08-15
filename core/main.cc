@@ -9,7 +9,7 @@
 int main() {
     spdlog::info("Program started.");
     ModuleName0 _module_name_0;
-    ModuleName1 _module_name_1;
+    ModuleName1 _module_name_1("passing the butter");
     ModuleName2 _module_name_2;
     spdlog::info("Program ended.");
 
