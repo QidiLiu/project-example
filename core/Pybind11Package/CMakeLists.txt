@@ -5,7 +5,9 @@ if(NOT DEFINED spdlog_FOUND)
 endif()
 
 if(NOT DEFINED pybind11_FOUND)
-    find_package(pybind11 REQUIRED)
+    set(PYBIND11_PYTHON_VERSION 3.11)
+    set(PYTHON_EXECUTABLE "C:/Tool/anaconda/envs/test/python.exe")
+    find_package(pybind11 CONFIG REQUIRED)
 endif()
 
 file(
@@ -14,11 +16,5 @@ file(
     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
 )
 
-add_library(${MODULE_NAME} ${SRC_FILES})
-    target_include_directories(${MODULE_NAME} PUBLIC ${spdlog_INCLUDE_DIR})
-    target_include_directories(${MODULE_NAME} PUBLIC ${pybind11_INCLUDE_DIR})
-    target_include_directories(${MODULE_NAME} PUBLIC ${Python_INCLUDE_DIR})
-    target_link_directories(${MODULE_NAME} PUBLIC ${Python_LIB_DIR})
-
-    add_dependencies(${MAIN} ${MODULE_NAME})
-    target_link_libraries(${MAIN} ${MODULE_NAME})
+pybind11_add_module(core ${SRC_FILES})
+    target_include_directories(core PUBLIC ${spdlog_INCLUDE_DIR})
