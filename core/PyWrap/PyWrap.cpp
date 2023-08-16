@@ -1,4 +1,4 @@
-#include "core/PythonWrapper/PythonWrapper.h"
+#include "core/PyWrap/PyWrap.h"
 #include "core/ModuleName1/ModuleName1.h"
 
 PYBIND11_MODULE(core, m) {

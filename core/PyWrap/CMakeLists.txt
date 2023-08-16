@@ -14,5 +14,5 @@ file(
 pybind11_add_module(core ${SRC_FILES})
     add_custom_command(
         TARGET core POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_BINARY_DIR}/core/PythonWrapper/core.cp311-win_amd64.pyd" "${ROOT_DIR}/out/pyd/core.pyd"
+        COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_BINARY_DIR}/core/PyWrap/core.cp311-win_amd64.pyd" "${ROOT_DIR}/out/pyd/core.pyd"
     )
