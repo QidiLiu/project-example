@@ -19,5 +19,5 @@ add_executable(${MAIN})
     add_subdirectory(./core/ModuleName0)
     add_subdirectory(./core/ModuleName1)
     add_subdirectory(./core/ModuleName2)
-
     target_sources(${MAIN} PRIVATE ${ROOT_DIR}/core/main.cc)
+
