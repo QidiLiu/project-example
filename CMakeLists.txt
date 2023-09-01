@@ -11,13 +11,13 @@ find_package(spdlog REQUIRED)
 set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${ROOT_DIR})
 
-add_subdirectory(./core/PyWrap)
+add_subdirectory(${ROOT_DIR}/tool/PyWrap)
 
 add_executable(${MAIN})
     target_include_directories(${MAIN} PUBLIC ${spdlog_INCLUDE_DIR})
 
-    add_subdirectory(./core/ModuleName0)
-    add_subdirectory(./core/ModuleName1)
-    add_subdirectory(./core/ModuleName2)
+    add_subdirectory(${ROOT_DIR}/core/ModuleName0)
+    add_subdirectory(${ROOT_DIR}/core/ModuleName1)
+    add_subdirectory(${ROOT_DIR}/core/ModuleName2)
     target_sources(${MAIN} PRIVATE ${ROOT_DIR}/core/main.cc)
 

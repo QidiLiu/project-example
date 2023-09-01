@@ -13,9 +13,9 @@ public:
 
     bool dev_mode;
 
-    ModuleName1(const std::string& init_purpose);
+    ModuleName1(const std::string& init_purpose_);
 
-    void setPurpose(const std::string& in_purpose);
+    void setPurpose(const std::string& in_purpose_);
 
     const std::string getPurpose();
 
