@@ -1,8 +1,8 @@
 #include "core/ModuleName1/ModuleName1.h"
 
-ModuleName1::ModuleName1(const std::string& init_purpose_) {
+ModuleName1::ModuleName1(const std::string& init_purpose) {
     this->dev_mode = true;
-    this->purpose = init_purpose_;
+    this->purpose = init_purpose;
 
     const std::string module_name = "ModuleName1";
     auto console_sink = std::make_shared<spdlog::sinks::stderr_color_sink_mt>();
@@ -19,8 +19,8 @@ ModuleName1::ModuleName1(const std::string& init_purpose_) {
     this->log_ptr->info("ModuleName1 initialized.");
 }
 
-void ModuleName1::setPurpose(const std::string& in_purpose_) {
-    this->purpose = in_purpose_;
+void ModuleName1::setPurpose(const std::string& in_purpose) {
+    this->purpose = in_purpose;
 }
 
 const std::string ModuleName1::getPurpose() {

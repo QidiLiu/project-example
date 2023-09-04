@@ -32,11 +32,11 @@ C++項目的文件組織模板
     x1 = 0
     y1 = 0
     ```
-- 如果是**形參**，**在變量名后加單下劃綫（小尾巴）**
+- 如果是**形參**，就加**前綴io_/in_/out_/init_**，分別代表輸入輸出/輸入/輸出/初始化
     ```python
-    def missYou(blue_rose_):
-        blue_rose_ = None
-        return blue_rose_
+    def missYou(io_blue_rose):
+        io_blue_rose = None
+        return io_blue_rose
     ```
 
 ### 2. 函數名
