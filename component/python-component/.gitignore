@@ -1,0 +1,8 @@
+.vs
+.vscode
+.venv
+doc
+other
+out
+__pycache__
+*.pyd
