@@ -5,6 +5,7 @@ if(NOT DEFINED pybind11_FOUND)
     set(PY_VENV ${PROJECT_ROOT}/component/python-component/.venv)
     set(pybind11_DIR "${PY_VENV}/Lib/site-packages/pybind11/share/cmake/pybind11")
     set(PYTHON_EXECUTABLE "${PY_VENV}/Scripts/python.exe")
+    find_package(Python COMPONENTS Interpreter Development)
     find_package(pybind11 CONFIG REQUIRED)
 endif()
 
